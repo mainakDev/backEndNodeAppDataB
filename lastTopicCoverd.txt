@@ -1,0 +1,3 @@
+handling different types of error, Logical errors next
+
+Slide no 56
