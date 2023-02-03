@@ -1,3 +1,2 @@
-Express.js router
-routing
+Express.js routing
 
