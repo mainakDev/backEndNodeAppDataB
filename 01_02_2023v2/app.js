@@ -3,10 +3,12 @@ const express = require('express');
 const app = express();
 
 
-app.use('/',(req, res, next) => {
-    console.log('Home page middleware');
-    next();
+
+
+app.use('/users',(req, res, next) => {
+    res.send('<h3>Users Page</h3>');
 });
+
 //middleware
 app.use('/products',(req, res) => {
     res.send('<h1>Products page</h1>');
@@ -16,8 +18,10 @@ app.use('/account',(req, res) => {
     res.send('<h1>Accounts page</h1>');
 });
 
-app.use('/',(req, res) => {
-  
+//home page
+app.use('/',(req, res, next) => {
+    console.log('Home page middleware');
+    next();
 });
 
 
