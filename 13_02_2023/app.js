@@ -12,6 +12,8 @@ const shopRoutes = require('./routes/shop');
 //MIDLEWARE to use body parser
 app.use(bodyparser.urlencoded({extended: false}));
 
+app.use(express.static(path.join(__dirname,'public')));
+
 //admin routes
 app.use('/admin', adminRoutes);
 
