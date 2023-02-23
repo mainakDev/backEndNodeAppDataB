@@ -5,9 +5,12 @@ const router =  express.Router();
 
 const rootDir = require('../util/path');
 
+const adminData = require('./admin');
+
 //home page middleware
-router.use('/',(req, res, next) => {
+router.get('/',(req, res, next) => {
     res.sendFile(path.join(rootDir,'views','shop.html'));
+    console.log(adminData.products);
 });
 
 module.exports = router;

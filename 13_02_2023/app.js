@@ -15,7 +15,7 @@ app.use(bodyparser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'public')));
 
 //admin routes
-app.use('/admin', adminRoutes);
+app.use('/admin', adminRoutes.routes);
 
 //shop routes
 app.use('/shop',shopRoutes);
