@@ -6,7 +6,7 @@ const app = express();
 
 const bodyparser = require('body-parser');
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); //use a templating engine ejs
 app.set('views', 'views');
 
 const adminRoutes = require('./routes/admin');

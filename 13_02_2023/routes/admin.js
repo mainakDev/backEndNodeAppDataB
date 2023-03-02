@@ -10,14 +10,19 @@ const products = [];
 
 //add-products middleware /admin/add-products
 router.get('/add-product', (req, res, next) => {
-    res.sendFile(path.join(rootDir,'views','add-product.html'));
+    res.render('add-product', {
+        pageTitle: 'Add Product',
+        path: '/admin/add-product',
+        formsCSS: true,
+        productCSS: true,
+        activeAddProduct: true
+    });
 });
 
 //products middleware /admin/product
-router.post('/product', (req, res, next)=> {
-    // console.log(req.body.title);
+router.post('/add-product', (req, res, next)=> {
     products.push(req.body.title);
-    res.sendFile(path.join(rootDir,'views','shop.html'));
+    res.redirect('/shop/');
 });
 
 module.exports.routes = router;
