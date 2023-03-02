@@ -21,7 +21,9 @@ router.get('/add-product', (req, res, next) => {
 
 //products middleware /admin/product
 router.post('/add-product', (req, res, next)=> {
-    products.push(req.body.title);
+    if(req.body.title.length > 0){
+        products.push(req.body.title);
+    }
     res.redirect('/shop/');
 });
 

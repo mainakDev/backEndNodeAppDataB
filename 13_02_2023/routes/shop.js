@@ -9,8 +9,13 @@ const adminData = require('./admin');
 
 //home page middleware /shop/
 router.get('/',(req, res, next) => {
-    res.render(path.join(rootDir,'views','shop.html'));
-    console.log(adminData.products);
+    // res.sendFile(path.join(rootDir,'views','shop.html'));
+    console.log(adminData.products.length);
+    const prods = adminData.products;
+    res.render('shop',{
+        pageTitle: 'Shop page',
+        product: prods
+    });
 });
 
 module.exports = router;
