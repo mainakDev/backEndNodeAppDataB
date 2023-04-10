@@ -51,7 +51,7 @@ deleteUser = asyncHandler(async(req, res, next) => {
         throw new error(`User doesn't exists`)
     }
     await user.deleteOne()
-    res.json({message: `User ${req.params.id} deleted`})
+    res.json({message: `User ${req.body.username} deleted`})
 })
 
 module.exports = {
